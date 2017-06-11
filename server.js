@@ -12,7 +12,7 @@ var port = process.env.PORT || 8080;
 
 //body-parser boilerplate
 var bodyParser = require("body-parser");
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Serve static content
