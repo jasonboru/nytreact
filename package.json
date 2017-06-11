@@ -1,38 +1,30 @@
 {
-  "name": "nytreact",
-  "version": "0.1.0",
-  "private": true,
+  "name": "react-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "public/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack & node server",
+    "start": "node server",
+    "build": "webpack"
+  },
+  "author": "Jason OBrien",
+  "license": "ISC",
   "dependencies": {
-    "express": "^4.15.3",
-    "mongoose": "^4.10.5",
-    "path": "^0.12.7",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "axios": "^0.12.0",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.1",
+    "morgan": "^1.7.0",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3"
   },
   "devDependencies": {
-    "react-scripts": "1.0.7"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
-  "main": "server.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jasonboru/nytreact.git"
-  },
-  "keywords": [
-    "react",
-    "express",
-    "MongoDB"
-  ],
-  "author": "Jason O'Brien",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jasonboru/nytreact/issues"
-  },
-  "homepage": "https://github.com/jasonboru/nytreact#readme"
+    "babel-core": "^6.3.13",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "webpack": "^1.13.1"
+  }
 }

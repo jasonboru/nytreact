@@ -1,5 +1,7 @@
 // Dependencies
 var express = require("express");
+var bodyParser = require("body-parser");
+var logger = require("morgan");
 var mongoose = require("mongoose");
 
 //requiring models
@@ -8,12 +10,14 @@ var Article = require("./models/Article");
 //initialize express app
 var app = express();
 //declare port
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8082;
 
-//body-parser boilerplate
-var bodyParser = require("body-parser");
-app.use(bodyParser.urlencoded({ extended: false }));
+//Use Morgan for Logging
+app.use(logger("dev"));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Serve static content
 app.use(express.static(process.cwd() + "/public"));
@@ -35,6 +39,9 @@ db.once("open", function() {
 
 // -------------------------------------------------
 // Routes
+app.get("/", function (req, res) {
+    res.sendFile(__dirname + "/public/index.html");
+});
 
 // -------------------------------------------------
 
