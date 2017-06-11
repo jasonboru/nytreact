@@ -43,7 +43,7 @@ class Main extends Component {
 		return (
 			<div className="container">
 			  <Search resetRes={this.resetRes} setQuery={this.setQuery} setStart={this.setStart} setEnd={this.setEnd} />
-			  <Results />
+			  <Results res={this.state.res}/>
 			  <Saved />
 			</div>
 		)
