@@ -38,10 +38,14 @@ db.once("open", function() {
 });
 
 // -------------------------------------------------
-// Routes
-app.get("/", function (req, res) {
-    res.sendFile(__dirname + "/public/index.html");
-});
+
+// Set up an Express Router
+var router = express.Router();
+
+// Require routes file pass router object
+require("./config/expressRoutes")(router);
+
+app.use(router);
 
 // -------------------------------------------------
 
